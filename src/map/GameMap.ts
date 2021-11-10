@@ -101,11 +101,11 @@ export class GameMap {
     }
 
     public draw(): void {
-        for(let i = 0 ; i < this._map.length ; i++){
-            for(let j = 0 ; j < this._map[i].length ; j++){
-                const cell: Cell = this._map[i][j];
+        for(let row = 0 ; row < this._map.length ; row++){
+            for(let column = 0 ; column < this._map[row].length ; column++){
+                const cell: Cell = this._map[row][column];
                 if(cell.filled){
-                    canvas2D.drawRectAtCell(i, j, cell.color, GAME_CONFIG.STROKE_COLOR, GAME_CONFIG.CELL_SIZE);
+                    canvas2D.drawRectAtCell(row, column, cell.color, GAME_CONFIG.STROKE_COLOR, GAME_CONFIG.CELL_SIZE);
                 }
             }
         }
