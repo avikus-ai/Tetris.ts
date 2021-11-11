@@ -1,6 +1,8 @@
 import { GAME_CONFIG } from './game.config';
 import { Vector2 } from './geom/Vector2';
 
+type Position = { X: number, Y: number }
+
 class Canvas2D {
 
     //------Members------//
@@ -80,7 +82,7 @@ class Canvas2D {
         this._context.restore();
     }
 
-    public drawRect(position: Vector2, fillColor: string, strokeColor: string, width: number, height: number) : void {
+    public drawRect(position: Position, fillColor: string, strokeColor: string, width: number, height: number) : void {
         this._context.save();
         this._context.lineWidth = GAME_CONFIG.STROKE_WIDTH;
         this._context.strokeStyle = strokeColor;
@@ -90,7 +92,7 @@ class Canvas2D {
         this._context.restore();
     }
 
-    public drawText(text: string, font:string, color: string, position: Vector2, textAlign: string = 'left'): void {
+    public drawText(text: string, font:string, color: string, position: Position, textAlign: string = 'left'): void {
         this._context.save();
         this._context.fillStyle = color;
         this._context.font = font;
