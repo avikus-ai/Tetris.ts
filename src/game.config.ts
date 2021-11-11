@@ -1,3 +1,5 @@
+export type GameConfig = typeof GAME_CONFIG;
+
 export const GAME_CONFIG : any = {
 
     // PHYSICS
